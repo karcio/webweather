@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Weather</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body onLoad="httpGetAsync(selectedValue)">
+  <div class="container">
+
+    <select class="form-control" id="selectCity" onchange="httpGetAsync(this.value)">
+      <option selected>Select location</option>
+      <option value="2965529">Celbridge</option>
+      <option value="3083829">Szczecin</option>
+      <option value="3084660">Stepnica</option>
+      <option value="3093350">Lipiany</option>
+    </select>
+
+    <script src="js/script.js" type="text/javascript"></script>
+
+    <h1 class="text-success">Weather in <span id="city"></span> </h1>
+    <p id="icon"></p>
+
+    <table class="table table-striped">
+      <tr>
+        <td>temperature &#8451;</td>
+        <td id="temp"></td>
+      </tr>
+      <tr>
+        <td>weather</td>
+        <td id="weather"></td>
+      </tr>
+      <tr>
+        <td>wind m/s</td>
+        <td id="wind"></td>
+      </tr>
+      <tr>
+        <td>visibility m</td>
+        <td id="visibility"></td>
+      </tr>
+      <tr>
+        <td>pressure hpa</td>
+        <td id="pressure"></td>
+      </tr>
+      <tr>
+        <td>humidity %</td>
+        <td id="humidity"></td>
+      </tr>
+      <tr>
+        <td>sunrise</td>
+        <td id="sunrise"></td>
+      </tr>
+      <tr>
+        <td>sunset</td>
+        <td id="sunset"></td>
+      </tr>
+    </table>
+
+    <p><button type=" submit" class="btn btn-outline-dark" onclick="httpGetAsync()">refresh</button></p>
+
+  </div>
+
+</body>
+
+</html>
